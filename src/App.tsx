@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { Tabs } from "./components/Tabs";
 import { DataFetcher } from "./components/DataFetcher";
@@ -178,9 +178,8 @@ function RenderPropsDemo() {
   );
 }
 
-function BuggyComponent() {
+function BuggyComponent(): React.ReactElement {
   throw new Error("💥 This component crashed on purpose!");
-  return null;
 }
 
 function ErrorBoundaryDemo() {
